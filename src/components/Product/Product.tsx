@@ -12,9 +12,10 @@ interface Product {
 
 interface ProductProps {
   product: Product;
+    onClick?: () => void;
 }
 
-const Product = ({ product }: ProductProps) => {
+const Product = ({ product, onClick }: ProductProps) => {
   return (
     <div className="product">
       <div className="product-info">
@@ -27,7 +28,7 @@ const Product = ({ product }: ProductProps) => {
       </div>
 
       <div className="buttons">
-        <Button>Adicionar</Button>
+        <Button onClick={onClick}>Adicionar</Button>
       </div>
     </div>
   );

@@ -2,6 +2,8 @@ import "./Home.scss";
 import Product from "../../components/Product/Product";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useCart } from "../../hooks/CartContext";
+import { Toaster, toast } from "sonner";
 
 const mockProducts = [
   {
@@ -76,7 +78,6 @@ const mockProducts = [
   },
 ];
 
-
 interface ProductDTO {
   id: string;
   code: string;
@@ -87,11 +88,12 @@ interface ProductDTO {
 
 const Home = () => {
   const [products, setProducts] = useState<ProductDTO[]>([]);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        // const response = await axios.get<ProductDTO[]>("http://localhost:8080/products/all"); 
+        // const response = await axios.get<ProductDTO[]>("http://localhost:8080/products/all");
         // setProducts(response.data);
         setProducts(mockProducts);
       } catch (error) {
@@ -102,15 +104,26 @@ const Home = () => {
     fetchProducts();
   }, []);
 
+  const handleClick = (product: ProductDTO) => {
+    addToCart(product);
+    toast.success("Produto adicionado ao carrinho.")
+  };
+
   return (
     <div className="home">
       <div className="home-title">Produtos</div>
 
       <div className="home-products">
         {products.map((product) => (
-          <Product key={product.id} product={product} />
+          <Product
+            key={product.id}
+            product={product}
+            onClick={() => handleClick(product)}
+          />
         ))}{" "}
       </div>
+
+      <Toaster richColors position="bottom-right" />
     </div>
   );
 };

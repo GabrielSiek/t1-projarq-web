@@ -10,7 +10,7 @@ html, body, #root {
 
 body {
   font-family: sans-serif;
-  background: linear-gradient(135deg, #E8EFFA 0%, #f5f9ff 50%, #E8EFFA 100%);
+  background-color: #E8EFFA;
   display: flex;
   justify-content: center;
   align-items: center;
