@@ -1,0 +1,17 @@
+/* App.css */
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background: linear-gradient(135deg, #E8EFFA 0%, #f5f9ff 50%, #E8EFFA 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
