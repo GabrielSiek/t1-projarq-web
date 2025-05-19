@@ -3,7 +3,7 @@
     flex-direction: column;
     margin-top: 32px;
     gap: 32px;
-    width: 100%;
+    width: 1200px;
 
     .home-title {
         font-size: 36px;
@@ -13,8 +13,9 @@
 
     .home-products {
         display: flex;
+        align-items: center;
         flex-wrap: wrap;
-        max-width: 80%;
         gap: 32px;
+        margin-bottom: 64px;
     }
 }

@@ -1,7 +1,7 @@
 .shopping-cart {
     margin-top: 32px;
     display: flex;
-    gap: 80px;
+    justify-content: space-between;
 
     .shopping-cart-products {
         display: flex;

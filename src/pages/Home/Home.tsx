@@ -93,9 +93,9 @@ const Home = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        // const response = await axios.get<ProductDTO[]>("http://localhost:8080/products/all");
-        // setProducts(response.data);
-        setProducts(mockProducts);
+        const response = await axios.get<ProductDTO[]>("http://localhost:8080/products/all");
+        setProducts(response.data);
+        console.log(response)
       } catch (error) {
         console.error("Erro ao buscar produtos:", error);
       }
